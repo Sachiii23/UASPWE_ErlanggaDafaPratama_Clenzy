@@ -57,11 +57,17 @@
                                                         </button>
                                                     </form>
                                                 </td>
-                                                <td><span><a href="#" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit"><i class="fa fa-pencil color-muted m-r-5"></i>
-                                                        </a><a href="#" data-toggle="tooltip" data-placement="top"
-                                                            title="Close"><i
-                                                                class="fa fa-close color-danger"></i></a></span>
+                                                <td><span><a href="{{ route('edit.transaksi', $v->id)}}" class="btn btn-warning" data-toggle="tooltip" 
+                                                            title="Edit"><i class="fa fa-pencil"></i>
+                                                        </a>  
+                                                        <form action="{{ route('destroy.transaksi', $v->id) }}" method="POST"
+                                                            class="d-inline">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button class="btn btn-danger">
+                                                                <i class="fa fa-close color-danger"></i>
+                                                            </button>
+                                                        </form>></span>
                                                 </td>
                                             </tr>
                                         @endforeach

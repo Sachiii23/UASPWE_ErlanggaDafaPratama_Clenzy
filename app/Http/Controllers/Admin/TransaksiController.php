@@ -57,17 +57,30 @@ class TransaksiController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $data = Transaksi::findorFail($id);
+        $produk = Produk::all();
+        $pelanggan = Pelanggan::all();
+        
+        return view('admin.transaksi.edit', compact('data', 'produk','pelanggan'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        $data = $request-> all();        
+        $item = Transaksi::find($request->id);
+
+        $item->update($data);
+
+        return redirect()->route('index.transaksi');
     }
 
 
     public function destroy(string $id)
     {
-        //
+        $data = Transaksi::findorFail($id);
+        $data->delete();
+
+        return redirect()->route('index.transaksi');
+
     }
 }
