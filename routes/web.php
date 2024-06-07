@@ -50,16 +50,16 @@ Route::prefix('transaksi')->group(function () {
 
 Route::prefix('user')->group(function (){
     Route::get('/', 'App\Http\Controllers\Admin\UserController@index')->name('index.user');
-    Route::get('/create', 'App\Http\Controllers\Admin\UserController@create')->name('create.user');
-    Route::post('/store', 'App\Http\Controllers\Admin\UserController@index')->name('store.user');
+    Route::get('/create', 'App\Http\Controllers\Admin\UserController@create')->name('register.user');
+    Route::post('/store', 'App\Http\Controllers\Admin\UserController@store')->name('store.user');
     Route::get('/edit/{id}', 'App\Http\Controllers\Admin\UserController@edit')->name('edit.user');
     Route::put('/update/{id}', 'App\Http\Controllers\Admin\UserController@update')->name('update.user');
-    Route::delete('/delete/{id}', 'App\Http\Controllers\Admin\UserController@delete')->name('destroy.user');
+    Route::delete('/delete/{id}', 'App\Http\Controllers\Admin\UserController@destroy')->name('destroy.user');
 });
 
-Route::get('/register', function () {
-    return view('admin.register');
-});
+// Route::get('/register', function () {
+//     return view('admin.register');
+// });
 Route::get('/dashboard', function () {
     return view('admin.dashboard.index');
 });

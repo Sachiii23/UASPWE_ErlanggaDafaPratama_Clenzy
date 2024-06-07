@@ -17,9 +17,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">User</h4>
-                            <a href="{{ route('/register') }}"><button class="btn btn-primary mb-3">Tambah
-                                    Data</button></a>
+                            <h4 class="card-title">User</h4>                        
 
                             <div class="table-responsive">
                                 <table class="table table-bordered verticle-middle">
@@ -34,19 +32,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $v)
+                                        @foreach ($data as $d)
                                             <tr>
                                                 <td>{{ $no++ }}</td>
-                                                <td>{{ $v->id }}</td>
-                                                <td>{{ $v->nama }}</td>
-                                                <td>{{ $v->harga }}</td>
+                                                <td>{{ $d->name }}</td>
+                                                <td>{{ $d->email }}</td>
+                                                <td>{{ $d->password }}</td>
+                                                <td>{{ $d->status }}</td>
                                                 <td>
                                                     <span>
-                                                        <a href="{{ route('edit.produk', $v->id) }}" class="btn btn-warning"
+                                                        <a href="{{ route('edit.user', $d->id)}}" class="btn btn-warning"
                                                             data-toggle="tooltip" data-placement="top" title="Edit"><i
                                                                 class="fa fa-pencil"></i>
                                                         </a>
-                                                        <form action="{{ route('destroy.produk', $v->id) }}" method="POST"
+                                                        <form action="{{ route('destroy.user', $d->id) }}" method="POST"
                                                             class="d-inline">
                                                             @csrf
                                                             @method('delete')

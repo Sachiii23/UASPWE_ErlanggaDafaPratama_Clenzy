@@ -52,9 +52,16 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control" placeholder="Password">
                                     </div>
+                                    <div class="form-group">
+                                            <select class="form-control" name="pelanggan_id" id="val-skill">
+                                                <option>-- Status --</option>                                        
+                                                    <option value="admin">ADMIN</option>
+                                                    <option value="user">KARYAWAN</option>                                             
+                                            </select>
+                                        </div>
                                     <button class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>
-                                <p class="mt-5 login-form__footer">Dont have account? <a href="/register"
+                                <p class="mt-5 login-form__footer">Dont have account? <a href="{{ route('register.user')}}"
                                         class="text-primary">Sign Up</a> now</p>
                             </div>
                         </div>

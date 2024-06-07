@@ -12,11 +12,13 @@ class Transaksi extends Model
 
     public function pelanggan()
     {
+        // utk menghubungkan dan ambil data dari model Pelanggan
         return $this->belongsTo(Pelanggan::class);
     }
 
     public function produk()
     {
+        // utk menghubungkan dan ambil data dari model produk
         return $this->belongsTo(Produk::class);
     }
 }

@@ -10,7 +10,7 @@
             <li class="nav-label">Apps</li>
             <li>
                 <a href="{{ route('index.user') }}" aria-expanded="false">
-                    <i class="icon-person menu-icon"></i> <span class="nav-text">User</span>
+                    <i class="icon-user menu-icon"></i> <span class="nav-text">User</span>
                 </a>
             </li>
             <li>
