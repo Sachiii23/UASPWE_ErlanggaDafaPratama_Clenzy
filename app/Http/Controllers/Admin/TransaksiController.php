@@ -10,9 +10,7 @@ use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $data = Transaksi::with('pelanggan', 'produk')->get();
@@ -38,9 +36,7 @@ class TransaksiController extends Controller
         return redirect()->back()->with('success', 'Status pembayaran transaksi berhasil diperbarui.');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         $produk = Produk::all();
@@ -49,9 +45,7 @@ class TransaksiController extends Controller
         return view('admin.transaksi.create', compact('produk', 'pelanggan'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
 
@@ -60,33 +54,18 @@ class TransaksiController extends Controller
         return redirect()->route('index.transaksi');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
         //

@@ -60,15 +60,13 @@ Route::prefix('user')->group(function (){
 // Route::get('/register', function () {
 //     return view('admin.register');
 // });
-Route::get('/dashboard', function () {
-    return view('admin.dashboard.index');
-});
+
+// ADMIN
+Route::get('/dashboard', 'App\Http\Controllers\Admin\DashboardController@ambil');
 
 
 //pelanggan
-Route::get('/pelanggan/dashboard', function () {
-    return view('pelanggan.dashboard.index');
-});
+Route::get('/pelanggan/dashboard', 'App\Http\Controllers\Admin\DashboardController@ambil');
 Route::get('/pelanggan/create/transaksi', function () {
     return view('pelanggan.transaksi.create');
 });
