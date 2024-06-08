@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.login');
+    return view('login');
 });
 
+Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login');
+Route::post('/proses', 'App\Http\Controllers\LoginController@proses')->name('proses.login');
+Route::get('/loginOut', 'App\Http\Controllers\LoginController@logout')->name('logout.login');
 
 Route::prefix('produk')->group(function () {
     Route::get('/', 'App\Http\Controllers\Admin\ProdukController@index')->name('index.produk');
@@ -62,11 +65,11 @@ Route::prefix('user')->group(function (){
 // });
 
 // ADMIN
-Route::get('/dashboard', 'App\Http\Controllers\Admin\DashboardController@ambil');
+Route::get('/dashboard', 'App\Http\Controllers\Admin\DashboardController@ambil')->name('index.dashboard');;
 
 
 //pelanggan
-Route::get('/pelanggan/dashboard', 'App\Http\Controllers\Admin\DashboardController@ambil');
+Route::get('/pelanggan/dashboard', 'App\Http\Controllers\Admin\DashboardController@ambil')->name('index.dashboard');
 Route::get('/pelanggan/create/transaksi', function () {
     return view('pelanggan.transaksi.create');
 });

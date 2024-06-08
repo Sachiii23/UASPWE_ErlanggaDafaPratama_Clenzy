@@ -32,6 +32,11 @@
                     <li><a href="{{ route('index.transaksi') }}">List Transaksi</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="{{ route('logout.login') }}" aria-expanded="false">
+                    <i class="icon-logout menu-icon"></i><span class="nav-text">logout</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
