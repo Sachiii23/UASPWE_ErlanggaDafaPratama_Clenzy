@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('berat')->nullable(); // Tambahkan kolom berat_per_kg
             $table->enum('status', ['lunas', 'belum_lunas'])->default('belum_lunas');
             $table->timestamps();
-
+            $table->string('metodePembayaran');
             $table->foreign('pelanggan_id')->references('id')->on('pelanggans')->onDelete('cascade');
             $table->foreign('produk_id')->references('id')->on('produks')->onDelete('cascade');
         });

@@ -43,6 +43,15 @@ Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
         Route::put('/update/{id}', 'App\Http\Controllers\Admin\UserController@update')->name('update.user');
         Route::delete('/delete/{id}', 'App\Http\Controllers\Admin\UserController@destroy')->name('destroy.user');
     });
+    
+    Route::prefix('customer')->group(function () {
+        Route::get('/', 'App\Http\Controllers\Admin\CustomerController@index')->name('index.customer');
+        Route::get('/create', 'App\Http\Controllers\Admin\CustomerController@create')->name('create.customer');
+        Route::post('/store', 'App\Http\Controllers\Admin\CustomerController@store')->name('store.customer');
+        Route::get('/edit/{id}', 'App\Http\Controllers\Admin\CustomerController@edit')->name('edit.customer');
+        Route::put('/update/{id}', 'App\Http\Controllers\Admin\CustomerController@update')->name('update.customer');
+        Route::delete('/delete/{id}', 'App\Http\Controllers\Admin\CustomerController@destroy')->name('destroy.customer');
+    });
 });
 // ------- EndADMIN -------------------
 
@@ -50,20 +59,11 @@ Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
 
 
 //--------KARYAWAN
-Route::group(['middleware' => ['auth', 'is_status:karyawan,admin']], function(){
+Route::group(['middleware' => ['auth', 'is_status:pelanggan,admin']], function(){
     Route::get('/karyawan/dashboard', 'App\Http\Controllers\DashboardController@ambil2')->name('karyawan.index.dashboard');
 
-    Route::prefix('customer')->group(function () {
-        Route::get('/', 'App\Http\Controllers\Karyawan\CustomerController@index')->name('index.customer');
-        Route::get('/create', 'App\Http\Controllers\Karyawan\CustomerController@create')->name('create.customer');
-        Route::post('/store', 'App\Http\Controllers\Karyawan\CustomerController@store')->name('store.customer');
-        Route::get('/edit/{id}', 'App\Http\Controllers\Karyawan\CustomerController@edit')->name('edit.customer');
-        Route::put('/update/{id}', 'App\Http\Controllers\Karyawan\CustomerController@update')->name('update.customer');
-        Route::delete('/delete/{id}', 'App\Http\Controllers\Karyawan\CustomerController@destroy')->name('destroy.customer');
-    });
     
-    Route::get('/get-harga-produk', 'App\Http\Controllers\Karyawan\TransaksiController@getHarga');
-    
+    Route::get('/get-harga-produk', 'App\Http\Controllers\Karyawan\TransaksiController@getHarga');    
     Route::prefix('transaksi')->group(function () {
         Route::get('/', 'App\Http\Controllers\Karyawan\TransaksiController@index')->name('index.transaksi');
         Route::get('/create', 'App\Http\Controllers\Karyawan\TransaksiController@create')->name('create.transaksi');

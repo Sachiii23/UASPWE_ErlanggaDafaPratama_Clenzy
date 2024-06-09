@@ -57,7 +57,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-4 col-form-label" for="val-username">Berat<span
+                                        <label class="col-lg-4 col-form-label" for="val-username">Berat /kg<span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
@@ -72,8 +72,20 @@
                                         <div class="col-lg-6">
                                             <input type="text" class="form-control" id="total" name="jumlah"
                                                 placeholder="Masukkan Jumlah..">
-                                        </div>
+                                        </div>                                                                              
                                     </div>
+                                    <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-username">Metode Pembayaran <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                            <select class="form-control" name="metodePembayaran" id="val-skill">
+                                                    <option>-- Pilih Metode --</option>                                        
+                                                        <option value="tunai">TUNAI</option>
+                                                        <option value="transfer">TRANSFER</option>                                             
+                                                </select>
+                                            </div>
+                                        </div>
                                     <div class="form-group row">
                                         <div class="col-lg-8 ml-auto">
                                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -38,7 +38,7 @@
                                                 <td>{{ $no++ }}</td>
                                                 <td>{{ $v->id }}</td>
                                                 <td>{{ $v->nama }}</td>
-                                                <td>{{ $v->harga }}</td>
+                                                <td>Rp. {{ $v->harga }}</td>
                                                 <td>
                                                     <span>
                                                         <a href="{{ route('edit.produk', $v->id) }}" class="btn btn-warning"

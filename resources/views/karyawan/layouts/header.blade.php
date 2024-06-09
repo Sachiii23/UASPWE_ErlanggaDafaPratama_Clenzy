@@ -4,7 +4,7 @@
             <b class="logo-abbr"><img src="{{ asset('admin/images/logo.png') }}" alt=""> </b>
             <span class="logo-compact"><img src="{{ asset('admin/images/logo-compact.png') }}" alt="ss"></span>
             <span class="brand-title">
-            <h3 class="card-title text-white">Karyawan Laundry</h3>       
+            <h3 class="card-title text-white">Pelanggan Laundry</h3>       
                
             </span>
         </a>

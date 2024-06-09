@@ -32,19 +32,19 @@
                                             <th>berat</th>
                                             <th>Harga/Kg</th>
                                             <th>Total</th>
-                                            <th>Status</th>
+                                            <th>Konfirmasi Pembayaran</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($data as $v)
                                             <tr>
-                                                <td>1</td>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{ $v->pelanggan->nama }}</td>
                                                 <td>{{ $v->produk->nama }}</td>
-                                                <td>{{ $v->berat }}</td>
-                                                <td>{{ $v->produk->harga }}</td>
-                                                <td>{{ $v->jumlah }}</td>
+                                                <td>{{ $v->berat }} kg</td>
+                                                <td>Rp. {{ $v->produk->harga }}</td>
+                                                <td>Rp. {{ $v->jumlah }}</td>
                                                 <td>
                                                     <form method="POST"
                                                         action="{{ route('transaksi.update-status', $v->id) }}">

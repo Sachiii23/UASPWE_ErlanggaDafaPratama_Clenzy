@@ -7,12 +7,7 @@
                     <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                 </a>
             </li>     
-            <li class="nav-label">Apps</li>
-            <li>
-                <a href="{{ route('index.customer') }}" aria-expanded="false">
-                    <i class="icon-badge menu-icon"></i><span class="nav-text">Costumer</span>
-                </a>
-            </li>  
+            <li class="nav-label">Apps</li> 
             <li>
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Transaksi</span>

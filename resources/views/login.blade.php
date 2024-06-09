@@ -63,7 +63,7 @@
                                             <select class="form-control" name="status" id="val-skill">
                                                 <option>-- Status --</option>                                        
                                                     <option value="admin">ADMIN</option>
-                                                    <option value="karyawan">KARYAWAN</option>                                             
+                                                    <option value="pelanggan">PELANGGAN</option>                                             
                                             </select>
                                         </div>
                                     <button class="btn login-form__btn submit w-100">Sign In</button>

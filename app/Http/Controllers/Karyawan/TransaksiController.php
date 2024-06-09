@@ -7,6 +7,7 @@ use App\Models\Pelanggan;
 use App\Models\Produk;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransaksiController extends Controller
 {
@@ -15,10 +16,13 @@ class TransaksiController extends Controller
     {
         $data = Transaksi::with('pelanggan', 'produk')->get();
         // dd($data);        
+
+        $pelangganLogin = Auth::user();
+        $no =1;
         if(auth()->user()->status=='admin'){
-            return view('admin.transaksi.index', compact('data'));  
-        }else{
-            return view('karyawan.transaksi.index', compact('data'));
+            return view('admin.transaksi.index', compact('data','no'));  
+        }else{            
+            return view('karyawan.transaksi.index', compact('data','pelangganLogin','no'));
         }        
     }
 

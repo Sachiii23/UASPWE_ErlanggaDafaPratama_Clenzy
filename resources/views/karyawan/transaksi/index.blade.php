@@ -22,41 +22,29 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered verticle-middle">
                                     <thead>
+                                        
                                         <tr>
-                                            <th scope="col">No</th>
-                                            {{-- <th>No Invoice</th>
-                                            <th>Tanggal</th>
-                                            <th>Waktu</th> --}}
+                                            <th scope="col">No</th>                                           
                                             <th>Customer</th>
                                             <th>Produk</th>
                                             <th>berat</th>
                                             <th>Harga/Kg</th>
                                             <th>Total</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th>Metode Pembayaran</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data as $v)
+                                        @foreach ($data as $v)                                                                                      
+                                        @if($v->pelanggan->nama == $pelangganLogin['name'])
+                                        
                                             <tr>
-                                                <td>1</td>
+                                                <td>{{ $no++ }}</td>
                                                 <td>{{ $v->pelanggan->nama }}</td>
                                                 <td>{{ $v->produk->nama }}</td>
-                                                <td>{{ $v->berat }}</td>
-                                                <td>{{ $v->produk->harga }}</td>
-                                                <td>{{ $v->jumlah }}</td>
-                                                <td>
-                                                    <form method="POST"
-                                                        action="{{ route('transaksi.update-status', $v->id) }}">
-                                                        @csrf
-                                                        @method('PUT')
-                                                        <button type="submit"
-                                                            class="btn mb-1 btn-rounded 
-                                                            {{ $v->status == 'belum_lunas' ? 'btn-danger' : 'btn-success' }}">
-                                                            {{ $v->status == 'belum_lunas' ? 'belum_lunas' : 'lunas' }}
-                                                        </button>
-                                                    </form>
-                                                </td>
+                                                <td>{{ $v->berat }} kg</td>
+                                                <td>Rp. {{ $v->produk->harga }}</td>
+                                                <td>Rp. {{ $v->jumlah }}</td>
+                                                <td>{{ $v->metodePembayaran }}</td>
                                                 <td><span><a href="{{ route('edit.transaksi', $v->id)}}" class="btn btn-warning" data-toggle="tooltip" 
                                                             title="Edit"><i class="fa fa-pencil"></i>
                                                         </a>  
@@ -69,7 +57,10 @@
                                                             </button>
                                                         </form></span>
                                                 </td>
-                                            </tr>
+                                            </tr>         
+                                                                           
+                                          @endif
+                                          
                                         @endforeach
                                     </tbody>
                                 </table>

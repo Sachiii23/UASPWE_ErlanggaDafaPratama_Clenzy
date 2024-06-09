@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Karyawan;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pelanggan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -12,23 +13,18 @@ class CustomerController extends Controller
     {
         $data = Pelanggan::all();
         $no = 1;
+
         // dd($data);
-        if(auth()->user()->status=='admin'){
-            return view('admin.customer.index', compact('data', 'no'));  
-        }else{
-            return view('karyawan.customer.index', compact('data', 'no'));
-        }                
+
+        return view('admin.customer.index', compact('data', 'no'));        
         
     }
 
 
     public function create()
     {
-        if(auth()->user()->status=='admin'){
-            return view('admin.customer.create');  
-        }else{
-            return view('karyawan.customer.create');
-        }                
+        
+        return view('admin.customer.create');            
     }
 
     /**
@@ -37,20 +33,20 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $nameI= $request->input('name');
+
         // dd($data);
         Pelanggan::create($data);
-        return redirect()->route('index.customer');
+        
+        return redirect()->route('index.customer');                 
+        
     }
 
     public function edit(string $id)
     {
         $data = Pelanggan::findOrFail($id);
         
-        if(auth()->user()->status=='admin'){
-            return view('admin.customer.edit', compact('data'));  
-        }else{
-            return view('karyawan.customer.edit', compact('data'));
-        }        
+        return view('admin.customer.edit', compact('data'));       
     }
 
     /**
