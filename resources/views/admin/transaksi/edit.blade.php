@@ -37,12 +37,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-4 col-form-label" for="val-username">Produk <span
+                                        <label class="col-lg-4 col-form-label" for="val-username">Jenis Laundry <span
                                                 class="text-danger">*</span>
                                         </label>
                                         <div class="col-lg-6">
                                             <select class="form-control" name="produk_id" id="produk">
-                                                <option>-- Pilih Produk --</option> 
+                                                <option>-- Pilih Jenis Laundry --</option> 
                                                 @foreach ($produk as $p)                                            
                                                     <option value="{{ $p->id }}">{{ $p->nama }}</option>           
                                                 @endforeach                                  

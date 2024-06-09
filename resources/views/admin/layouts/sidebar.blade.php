@@ -15,7 +15,7 @@
             </li>
             <li>
                 <a href="{{ route('index.produk') }}" aria-expanded="false">
-                    <i class="icon-envelope menu-icon"></i> <span class="nav-text">Produk</span>
+                    <i class="fa fa-shopping-cart"></i> <span class="nav-text">Jenis Laundry</span>
                 </a>
             </li>
             <li>
@@ -29,7 +29,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('create.transaksi') }}">Transaksi</a></li>
-                    <li><a href="{{ route('index.transaksi') }}">List Transaksi</a></li>
+                    <li><a href="{{ route('index.transaksi') }}">Riwayat Transaksi</a></li>
                 </ul>
             </li>
             <li>

@@ -20,10 +20,12 @@ class DashboardController extends Controller
         return view('admin.dashboard.index', compact('dataP','dataPr','dataT','dataGabung','no'));
     }
     public function ambil2(){
+        $dataPr = Produk::count();
+
         $userAktif = Auth::user()->name;
         $data = Transaksi::with('pelanggan')->get();
 
-        return view('karyawan.dashboard.index', compact('data','userAktif'));
+        return view('karyawan.dashboard.index', compact('data','userAktif','dataPr'));
     }
 }
 

@@ -26,7 +26,7 @@
                                         <tr>
                                             <th scope="col">No</th>                                           
                                             <th>Customer</th>
-                                            <th>Produk</th>
+                                            <th>Jenis Laundry</th>
                                             <th>berat</th>
                                             <th>Harga/Kg</th>
                                             <th>Total</th>

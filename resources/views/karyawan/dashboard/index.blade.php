@@ -24,6 +24,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <div class="card gradient-1">
+                        <div class="card-body">
+                            <h3 class="card-title text-white">Jenis Laundry</h3>
+                            <div class="d-inline-block">
+                                <h2 class="text-white">{{ $dataPr }}</h2>
+                                {{-- <p class="text-white mb-0">Jan - March 2019</p> --}}
+                            </div>
+                            <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                        </div>
+                    </div>
+                </div>
                 <!-- #/ container -->
             </div>
 
