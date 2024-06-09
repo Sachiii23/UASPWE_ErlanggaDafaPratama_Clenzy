@@ -63,7 +63,7 @@
                                             <select class="form-control" name="status" id="val-skill">
                                                 <option>-- Status --</option>                                        
                                                     <option value="admin">ADMIN</option>
-                                                    <option value="user">KARYAWAN</option>                                             
+                                                    <option value="karyawan">KARYAWAN</option>                                             
                                             </select>
                                         </div>
                                     <button class="btn login-form__btn submit w-100">Sign In</button>
@@ -102,6 +102,17 @@
     }
     @endif
     @if($message = Session::get('failed')){
+        <script>
+            Swal.fire({
+                title: "INFO",
+                text: "{{ $message }}",
+                icon: "error"
+            });
+        </script>
+    }
+    @endif
+
+    @if($message = Session::get('failedL')){
         <script>
             Swal.fire({
                 title: "INFO",

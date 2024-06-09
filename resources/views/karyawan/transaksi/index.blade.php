@@ -1,4 +1,4 @@
-@extends('admin.layouts.index')
+@extends('karyawan.layouts.index')
 
 @section('content')
     <div class="content-body">

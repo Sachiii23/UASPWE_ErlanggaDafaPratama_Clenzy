@@ -24,13 +24,13 @@
 
 <body>
     <div id="main-wrapper">
-        @include('pelanggan.layouts.header')
+        @include('karyawan.layouts.header')
 
-        @include('pelanggan.layouts.sidebar')
+        @include('karyawan.layouts.sidebar')
 
         @yield('content')
 
-        @include('pelanggan.layouts.footer')
+        @include('karyawan.layouts.footer')
 
     </div>
 </body>

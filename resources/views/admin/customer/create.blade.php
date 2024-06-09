@@ -39,9 +39,7 @@
                                                 placeholder="No Handphone">
                                         </div>
                                     </div>
-                                    <a href="{{ route('index.produk') }}">
-                                        <button class="btn btn-warning text-white">Kembali</button>
-                                    </a>
+                               
                                     <button type="submit" class="btn btn-dark">Tambah</button>
                                 </form>
                             </div>

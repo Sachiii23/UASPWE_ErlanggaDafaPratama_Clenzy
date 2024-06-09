@@ -1,5 +1,5 @@
 <?php 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pelanggan;
@@ -13,6 +13,11 @@ class DashboardController extends Controller
         $dataPr = Produk::count();
         $dataT = Transaksi::count();
         return view('admin.dashboard.index', compact('dataP','dataPr','dataT'));
+    }
+    public function ambil2(){
+        $dataT = Transaksi::count();
+        $dataP = Pelanggan::count();        
+        return view('karyawan.dashboard.index', compact('dataT','dataP'));
     }
 }
 

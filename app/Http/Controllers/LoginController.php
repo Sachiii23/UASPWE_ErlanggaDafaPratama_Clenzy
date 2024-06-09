@@ -27,8 +27,13 @@ class LoginController extends Controller
         ]);
 
         $data = $request->only('email','password','status');
-        if(Auth::attempt($data)){            
-            return redirect()->route('index.dashboard');
+        if(Auth::attempt($data)){    
+            if(auth()->user()->status=='admin'){
+                return redirect()->route('index.dashboard');    
+            }else{
+                return redirect()->route('karyawan.index.dashboard');
+            }        
+            
         }else{  
             return redirect()->route('login')->with('failed','Email,Password atau Status anda salah!');
         }

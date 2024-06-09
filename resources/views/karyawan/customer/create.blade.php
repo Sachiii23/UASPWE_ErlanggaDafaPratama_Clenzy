@@ -1,4 +1,4 @@
-@extends('admin.layouts.index')
+@extends('karyawan.layouts.index')
 
 @section('content')
     <div class="content-body">
@@ -18,26 +18,29 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Edit Data</h4>
+                            <h4 class="card-title">Tambah Data</h4>
                             <div class="basic-form">
-                                <form action="{{ route('update.produk', $data->id) }}" method="post">
+                                <form action="{{ route('store.customer') }}" method="post">
                                     @csrf
-                                    @method('put')
-                                    <input type="hidden" name="id" value="{{ $data->id }}">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label>Nama</label>
-                                            <input type="text" name="nama" value="{{ $data->nama }}"
-                                                class="form-control" placeholder="Nama">
+                                            <input type="text" name="nama" class="form-control" placeholder="Nama">
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label>Harga</label>
-                                            <input type="number" name="harga" value="{{ $data->harga }}"
-                                                class="form-control" placeholder="Harga">
+                                            <label>Email</label>
+                                            <input type="email" name="email" class="form-control" placeholder="Email">
                                         </div>
                                     </div>
-                                
-                                    <button type="submit" class="btn btn-dark">Update</button>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label>No Handphone</label>
+                                            <input type="text" name="no_hp" class="form-control"
+                                                placeholder="No Handphone">
+                                        </div>
+                                    </div>
+                                 
+                                    <button type="submit" class="btn btn-dark">Tambah</button>
                                 </form>
                             </div>
                         </div>

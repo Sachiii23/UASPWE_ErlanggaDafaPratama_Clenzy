@@ -31,10 +31,7 @@
                                             <label>Harga</label>
                                             <input type="number" name="harga" class="form-control" placeholder="Harga">
                                         </div>
-                                    </div>
-                                    <a href="{{ route('index.produk') }}">
-                                        <button class="btn btn-warning text-white">Kembali</button>
-                                    </a>
+                                    </div>                               
                                     <button type="submit" class="btn btn-dark">Tambah</button>
                                 </form>
                             </div>

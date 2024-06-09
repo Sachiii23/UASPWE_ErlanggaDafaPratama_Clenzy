@@ -50,14 +50,15 @@
                                 @csrf
                                 @method('put')
                                 <input type="hidden" name="id" value="{{ $data->id}}">
+                                <input type="hidden" name="password" value="{{ $data->password}}">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="Name" value="{{ $data->name}}" name="name" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" value="{{ $data->email }}" name="email" required>
+                                        <input type="email" class="form-control" placeholder="Email" name="email" value="{{ $data->email}}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" value="{{ $data->password }}" name="password" required>
+                                        <input type="password" class="form-control" placeholder="Password" name="passwordBaru">
                                     </div>
                                     <div class="form-group">
                                             <select class="form-control" name="status" id="val-skill">

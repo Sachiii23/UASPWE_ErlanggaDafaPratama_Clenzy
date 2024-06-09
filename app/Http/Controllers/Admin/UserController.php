@@ -58,13 +58,17 @@ class UserController extends Controller
         $data = $request->all();
         $item = User::find($request->id);
       
+        if(!$data['passwordBaru']){
+            $item->update($data);
+        }else{         
         $item->update([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['passwordBaru']),
             'status' => $data['status']
         ]);
-
+   
+        }
         return redirect()->route('index.user');
     }
 
