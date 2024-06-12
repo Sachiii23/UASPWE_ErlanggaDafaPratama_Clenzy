@@ -27,7 +27,8 @@ Route::post('/store', 'App\Http\Controllers\Admin\UserController@store')->name('
 //------------------------- ADMIN -----------------------------------------------------------------
 Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
     
-    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@ambil')->name('index.dashboard');;
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@ambil')->name('index.dashboard');
+    Route::post('/dashboard', 'App\Http\Controllers\DashboardController@cariTransaksi')->name('cari.transaksi.dashboard');
     Route::prefix('produk')->group(function () {
         Route::get('/', 'App\Http\Controllers\Admin\ProdukController@index')->name('index.produk');
         Route::get('/create', 'App\Http\Controllers\Admin\ProdukController@create')->name('create.produk');

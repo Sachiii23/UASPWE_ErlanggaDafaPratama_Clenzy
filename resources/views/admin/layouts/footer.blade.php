@@ -21,6 +21,7 @@
         <!-- ChartistJS -->
         <script src="{{ asset('admin/plugins/chartist/js/chartist.min.js') }}"></script>
         <script src="{{ asset('admin/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js') }}"></script>
+        <script src="{{ asset('admin/./js/plugins-init/chartist.init.js') }}"></script>
 
 
 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('metodePembayaran');
             $table->foreign('pelanggan_id')->references('id')->on('pelanggans')->onDelete('cascade');
             $table->foreign('produk_id')->references('id')->on('produks')->onDelete('cascade');
+            $table->date('tanggalBuat');
         });
     }
 

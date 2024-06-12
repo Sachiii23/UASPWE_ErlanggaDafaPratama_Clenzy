@@ -40,17 +40,6 @@ class ProdukController extends Controller
         return redirect()->route('index.produk');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(String $id)
     {
         $data = Produk::findOrFail($id);
@@ -58,9 +47,6 @@ class ProdukController extends Controller
         return view('admin.produk.edit', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request)
     {
         $data = $request->all();

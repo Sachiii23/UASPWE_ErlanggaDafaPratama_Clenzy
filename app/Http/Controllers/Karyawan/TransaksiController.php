@@ -8,6 +8,7 @@ use App\Models\Produk;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class TransaksiController extends Controller
 {
@@ -61,7 +62,7 @@ class TransaksiController extends Controller
 
     public function store(Request $request)
     {
-
+        
         Transaksi::create($request->all());
 
         return redirect()->route('index.transaksi');

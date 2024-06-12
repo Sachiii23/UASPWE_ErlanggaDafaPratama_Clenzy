@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     use HasFactory;
-    protected $fillable = ['pelanggan_id', 'produk_id', 'jumlah', 'berat', 'status','metodePembayaran'];
+    protected $fillable = ['pelanggan_id', 'produk_id', 'jumlah', 'berat', 'status','metodePembayaran','tanggalBuat'];
 
     public function pelanggan()
     {

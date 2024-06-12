@@ -85,6 +85,14 @@
                                                         <option value="transfer">TRANSFER</option>                                             
                                                 </select>
                                             </div>
+                                        </div>                                        
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label"> Tanggal Buat
+                                                <span class="text-danger">*</span>
+                                            </label>                                                
+                                            <div class="col-lg-6">
+                                                <input type="date" class="form-control" id="exampleInputDate" name="tanggalBuat">
+                                            </div>
                                         </div>
                                     <div class="form-group row">
                                         <div class="col-lg-8 ml-auto">
