@@ -1,3 +1,4 @@
+
 <script src="{{ asset('admin/plugins/common/common.min.js') }}"></script>
         <script src="{{ asset('admin/js/custom.min.js') }}"></script>
         <script src="{{ asset('admin/js/settings.js') }}"></script>
@@ -22,7 +23,7 @@
         <script src="{{ asset('admin/plugins/chartist/js/chartist.min.js') }}"></script>
         <script src="{{ asset('admin/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js') }}"></script>
         <script src="{{ asset('admin/./js/plugins-init/chartist.init.js') }}"></script>
-
-
-
+        <script src="{{ asset('admin/cdn.jsdelivr.net/npm/chart.js') }}"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        @yield('footer')
         <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
