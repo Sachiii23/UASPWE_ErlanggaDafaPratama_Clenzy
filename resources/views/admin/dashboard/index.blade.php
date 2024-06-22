@@ -89,8 +89,7 @@
                                     <th>Metode Pembayaran</th>
                                     <th>Konfirmasi Pembayaran</th>
                                     <th>Jadwal Pesan</th>
-                                    <th>Waktu Pelunasan</th>   
-                                    <th>Untung</th>
+                                    <th>Waktu Pelunasan</th>                                       
                                 </tr>
                             </thead>
                             <tbody> 
@@ -109,8 +108,7 @@
                                     <td>{{ $p->status }}</td>
                                     <td>{{ $p->tanggalBuat }}</td>
                                     @if($p['status'] == 'lunas')
-                                    <td>{{ $p->updated_at }}</td>
-                                   <td></td>
+                                    <td>{{ $p->updated_at }}</td>                                
                                     @endif
                                 </tr>   
                                 @if($p['status'] == 'lunas')
