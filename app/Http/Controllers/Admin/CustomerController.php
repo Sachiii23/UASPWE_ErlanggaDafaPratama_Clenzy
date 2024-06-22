@@ -32,8 +32,7 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $nameI= $request->input('name');
+        $data = $request->all();        
 
         // dd($data);
         Pelanggan::create($data);
