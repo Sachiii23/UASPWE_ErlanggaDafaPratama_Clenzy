@@ -6,7 +6,7 @@
             <div class="row">
             @php $jumlahTransaksi = 0;
             @endphp
-            @foreach($data as $v)                
+            @foreach($data as $v)
                 @if($v->pelanggan->nama == $userAktif)
                     @php $jumlahTransaksi++
                     @endphp

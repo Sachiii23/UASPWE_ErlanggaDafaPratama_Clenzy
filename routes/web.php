@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('landing');
 });
 
 Route::get('/login', 'App\Http\Controllers\LoginController@index')->name('login');
@@ -26,7 +26,7 @@ Route::post('/store', 'App\Http\Controllers\Admin\UserController@store')->name('
 
 //------------------------- ADMIN -----------------------------------------------------------------
 Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
-    
+
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@ambil')->name('index.dashboard');
     Route::post('/dashboard', 'App\Http\Controllers\DashboardController@cariTransaksi')->name('cari.transaksi.dashboard');
     Route::prefix('produk')->group(function () {
@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
         Route::put('/update/{id}', 'App\Http\Controllers\Admin\UserController@update')->name('update.user');
         Route::delete('/delete/{id}', 'App\Http\Controllers\Admin\UserController@destroy')->name('destroy.user');
     });
-    
+
     Route::prefix('customer')->group(function () {
         Route::get('/', 'App\Http\Controllers\Admin\CustomerController@index')->name('index.customer');
         Route::get('/create', 'App\Http\Controllers\Admin\CustomerController@create')->name('create.customer');
@@ -52,6 +52,10 @@ Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
         Route::get('/edit/{id}', 'App\Http\Controllers\Admin\CustomerController@edit')->name('edit.customer');
         Route::put('/update/{id}', 'App\Http\Controllers\Admin\CustomerController@update')->name('update.customer');
         Route::delete('/delete/{id}', 'App\Http\Controllers\Admin\CustomerController@destroy')->name('destroy.customer');
+    });
+
+    Route::prefix('laporan')->group(function (){
+        Route::get('laporan-transaksi/view', [TransaksiController::class, 'viewPDF'])->name('laporan.transaksi.view');
     });
 });
 // ------- EndADMIN -------------------
@@ -63,8 +67,8 @@ Route::group(['middleware' => ['auth', 'is_status:admin']], function(){
 Route::group(['middleware' => ['auth', 'is_status:pelanggan,admin']], function(){
     Route::get('/karyawan/dashboard', 'App\Http\Controllers\DashboardController@ambil2')->name('karyawan.index.dashboard');
 
-    
-    Route::get('/get-harga-produk', 'App\Http\Controllers\Karyawan\TransaksiController@getHarga');    
+
+    Route::get('/get-harga-produk', 'App\Http\Controllers\Karyawan\TransaksiController@getHarga');
     Route::prefix('transaksi')->group(function () {
         Route::get('/', 'App\Http\Controllers\Karyawan\TransaksiController@index')->name('index.transaksi');
         Route::get('/create', 'App\Http\Controllers\Karyawan\TransaksiController@create')->name('create.transaksi');

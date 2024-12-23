@@ -17,7 +17,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Transaksi</h4>                         
+                            <h4 class="card-title">Transaksi</h4>
 
                             <div class="table-responsive">
                                 <table class="table table-bordered verticle-middle">
@@ -51,15 +51,15 @@
                                                         @csrf
                                                         @method('PUT')
                                                         <button type="submit"
-                                                            class="btn mb-1 btn-rounded 
+                                                            class="btn mb-1 btn-rounded
                                                             {{ $v->status == 'belum_lunas' ? 'btn-danger' : 'btn-success' }}">
                                                             {{ $v->status == 'belum_lunas' ? 'belum_lunas' : 'lunas' }}
                                                         </button>
                                                     </form>
                                                 </td>
-                                                <td><span><a href="{{ route('edit.transaksi', $v->id)}}" class="btn btn-warning" data-toggle="tooltip" 
+                                                <td><span><a href="{{ route('edit.transaksi', $v->id)}}" class="btn btn-warning" data-toggle="tooltip"
                                                             title="Edit"><i class="fa fa-pencil"></i>
-                                                        </a>  
+                                                        </a>
                                                         <form action="{{ route('destroy.transaksi', $v->id) }}" method="POST"
                                                             class="d-inline">
                                                             @csrf

@@ -4,8 +4,8 @@
             <b class="logo-abbr"><img src="{{ asset('admin/images/logo.png') }}" alt=""> </b>
             <span class="logo-compact"><img src="{{ asset('admin/images/logo-compact.png') }}" alt="ss"></span>
             <span class="brand-title">
-            <h3 class="card-title text-white">ADMIN Laundry</h3>       
-               
+            <h3 class="card-title text-white">ADMIN Clenzy Kelompok 9</h3>
+
             </span>
         </a>
     </div>
@@ -19,6 +19,6 @@
                 <span class="toggle-icon"><i class="icon-menu"></i></span>
             </div>
         </div>
-      
+
     </div>
 </div>
